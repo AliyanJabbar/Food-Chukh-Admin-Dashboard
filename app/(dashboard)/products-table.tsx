@@ -112,31 +112,6 @@
 //   );
 // }
 
-'use client';
-
-import {
-  TableHead,
-  TableRow,
-  TableHeader,
-  TableBody,
-  Table
-} from '@/components/ui/table';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle
-} from '@/components/ui/card';
-import { Product } from './product';
-import { useRouter } from 'next/navigation';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useFetchFoods } from './fetchfoods';
-import { Data } from '../types';
-import { useEffect, useState } from 'react';
-
 // export function ProductsTable({
 //   offset,
 //   totalProducts
@@ -240,16 +215,41 @@ import { useEffect, useState } from 'react';
 //   );
 // }
 
+'use client';
+
+import {
+  TableHead,
+  TableRow,
+  TableHeader,
+  TableBody,
+  Table
+} from '@/components/ui/table';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle
+} from '@/components/ui/card';
+import { Product } from './product';
+import { useRouter } from 'next/navigation';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Data } from '../types';
+import { useState } from 'react';
+
 export function ProductsTable({
+  products,
   offset,
   totalProducts
 }: {
+  products: Data[];
   offset: number;
   totalProducts: number;
 }) {
   let router = useRouter();
   let productsPerPage = 5;
-  const products: Data[] = useFetchFoods();
   const [currentPage, setCurrentPage] = useState(1);
 
   // Calculate the correct slice indices
