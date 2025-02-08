@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card';
-import { signIn } from '@/lib/auth';
+import { LoginLink } from '@kinde-oss/kinde-auth-nextjs/server';
 
 export default function LoginPage() {
   return (
@@ -15,21 +15,13 @@ export default function LoginPage() {
         <CardHeader>
           <CardTitle className="text-2xl">Login</CardTitle>
           <CardDescription>
-            This demo uses GitHub for authentication.
+            Welcome to Food Chukh Admin Dashboard
           </CardDescription>
         </CardHeader>
         <CardFooter>
-          <form
-            action={async () => {
-              'use server';
-              await signIn('github', {
-                redirectTo: '/'
-              });
-            }}
-            className="w-full"
-          >
-            <Button className="w-full">Sign in with GitHub</Button>
-          </form>
+          <LoginLink>
+            <Button className="w-full">Sign in with Kinde</Button>
+          </LoginLink>
         </CardFooter>
       </Card>
     </div>
