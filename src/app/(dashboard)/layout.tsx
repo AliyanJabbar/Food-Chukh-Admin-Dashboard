@@ -22,7 +22,6 @@ import Providers from './providers';
 import { NavItem } from './nav-item';
 import { SearchInput } from './search';
 import Image from 'next/image';
-import { AuthProvider } from '../../app/authProvider';
 
 export default function DashboardLayout({
   children
@@ -31,7 +30,6 @@ export default function DashboardLayout({
 }) {
 
   return (
-    <AuthProvider>
       <Providers>
         <main className="flex min-h-screen w-full flex-col bg-muted/40">
           <DesktopNav />
@@ -49,7 +47,6 @@ export default function DashboardLayout({
           <Analytics />
         </main>
       </Providers>
-    </AuthProvider>
   );
 }
 
