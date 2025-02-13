@@ -19,6 +19,7 @@ export default {
     },
     extend: {
       colors: {
+        orangeLike: '#FF9F0D',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
