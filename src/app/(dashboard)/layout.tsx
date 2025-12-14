@@ -21,6 +21,7 @@ import Providers from './providers';
 import { NavItem } from './nav-item';
 import { SearchInput } from './search';
 import Image from 'next/image';
+import img from "../../../public/android-chrome-192x192.png"
 
 export default function DashboardLayout({
   children
@@ -57,7 +58,7 @@ function DesktopNav() {
           className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
         >
           <Image
-            src="/android-chrome-192x192.png"
+            src={img}
             alt="logo"
             width={50}
             height={50}
